@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "home": "Home",
+    "properties": "Properties",
+    "about": "About Us",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "title": "Find Your Perfect Commercial Property",
+    "subtitle": "Search properties across all states of India",
+    "search": "Search Properties"
+  },
+  "filter": {
+    "state": "Select State",
+    "type": "Property Type",
+    "transaction": "Buy / Rent"
+  }
+}
