@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-//import { FaBuilding, FaStore, FaWarehouse, FaIndustry, FaMapMarkerAlt, FaChartLine, FaHome, FaRocket, FaUtensils, FaHospital, FaHotel, FaTree, FaStar, FaUsers, FaDollarSign } from 'react-icons/fa';
 import { FaBuilding, FaStore, FaWarehouse, FaIndustry, FaMapMarkerAlt, FaChartLine, FaHome, FaRocket, FaUtensils, FaHospital, FaHotel, FaTree, FaStar, FaUsers, FaDollarSign } from 'react-icons/fa';
+
 const categories = [
   { icon: <FaBuilding size={36} />, label: 'Office Space', type: 'Office' },
   { icon: <FaChartLine size={36} />, label: 'Preleased Properties', type: 'Pre-Lease' },
@@ -38,9 +38,9 @@ const Categories = () => {
 
   return (
     <section className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-2xl font-extrabold text-center text-gray-900 mb-10 uppercase tracking-widest border-b-2 border-red-700 pb-4 inline-block w-full">
-          BUY OR SALE
+      <div className="max-w-7xl mx-auto px-6">
+        <h2 className="text-2xl font-extrabold text-center text-gray-900 mb-10 uppercase tracking-widest border-b-2 border-yellow-500 pb-4 inline-block w-full">
+          Buy or Sale
         </h2>
 
         {/* Categories Grid */}
@@ -53,8 +53,8 @@ const Categories = () => {
               onClick={() => setSelectedCategory(cat)}
               className="flex flex-col items-center cursor-pointer group"
             >
-              <div className="w-24 h-24 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center mb-3 group-hover:bg-red-50 group-hover:border-red-400 group-hover:shadow-lg transition-all duration-300">
-                <span className="text-gray-600 group-hover:text-red-600 transition-colors duration-300">
+              <div className="w-24 h-24 rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center mb-3 group-hover:bg-yellow-50 group-hover:border-yellow-400 group-hover:shadow-lg transition-all duration-300">
+                <span className="text-gray-600 group-hover:text-yellow-600 transition-colors duration-300">
                   {cat.icon}
                 </span>
               </div>
@@ -65,10 +65,10 @@ const Categories = () => {
 
         {/* Search Popup */}
         {selectedCategory && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center px-4">
-            <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-lg">
+          <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center px-4">
+            <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-lg border-t-4 border-yellow-400">
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-14 h-14 rounded-full bg-red-50 border border-red-200 flex items-center justify-center text-red-600">
+                <div className="w-14 h-14 rounded-full bg-yellow-50 border border-yellow-300 flex items-center justify-center text-yellow-600">
                   {selectedCategory.icon}
                 </div>
                 <div>
@@ -79,9 +79,9 @@ const Categories = () => {
 
               <div className="flex flex-col gap-4 mb-6">
                 <div>
-                  <label className="text-sm text-gray-600 mb-1 block">Select State</label>
+                  <label className="text-sm text-gray-600 mb-1 block font-medium">Select State</label>
                   <select
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-red-500 text-gray-700"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-yellow-500 text-gray-700"
                     value={selectedState}
                     onChange={(e) => setSelectedState(e.target.value)}
                   >
@@ -89,9 +89,9 @@ const Categories = () => {
                   </select>
                 </div>
                 <div>
-                  <label className="text-sm text-gray-600 mb-1 block">Transaction Type</label>
+                  <label className="text-sm text-gray-600 mb-1 block font-medium">Transaction Type</label>
                   <select
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-red-500 text-gray-700"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-yellow-500 text-gray-700"
                     value={selectedTransaction}
                     onChange={(e) => setSelectedTransaction(e.target.value)}
                   >
@@ -101,7 +101,7 @@ const Categories = () => {
               </div>
 
               <div className="flex gap-3">
-                <button onClick={handleSearch} className="flex-1 bg-red-700 text-white py-3 rounded-xl font-semibold hover:bg-red-800 transition">
+                <button onClick={handleSearch} className="flex-1 bg-gray-900 text-white py-3 rounded-xl font-semibold hover:bg-yellow-400 hover:text-gray-900 transition">
                   Search Properties
                 </button>
                 <button onClick={() => setSelectedCategory(null)} className="flex-1 bg-gray-100 text-gray-700 py-3 rounded-xl font-semibold hover:bg-gray-200 transition">

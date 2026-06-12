@@ -34,18 +34,18 @@ const Properties = () => {
   return (
     <div className="pt-24 min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-red-700 text-white py-10 px-4 text-center">
+      <div className="bg-gray-900 text-white py-10 px-4 text-center">
         <h1 className="text-4xl font-bold mb-2">All Properties</h1>
-        <p className="text-red-200">Find commercial properties across India</p>
+        <p className="text-yellow-400">Find commercial properties across India</p>
       </div>
 
       {/* Filters */}
-      <div className="max-w-6xl mx-auto px-4 py-6">
-        <div className="bg-white rounded-xl shadow-md p-4 flex flex-wrap gap-4 items-center">
-          <FaFilter className="text-red-700 text-lg" />
+      <div className="max-w-7xl mx-auto px-4 py-6">
+        <div className="bg-white rounded-xl shadow-md p-4 flex flex-wrap gap-4 items-center border border-gray-100">
+          <FaFilter className="text-yellow-500 text-lg" />
 
           <select
-            className="flex-1 min-w-[150px] border border-gray-300 rounded-lg px-3 py-2 text-gray-700 focus:outline-none focus:border-red-500"
+            className="flex-1 min-w-[150px] border border-gray-300 rounded-lg px-3 py-2 text-gray-700 focus:outline-none focus:border-yellow-500"
             value={selectedState}
             onChange={(e) => setSelectedState(e.target.value)}
           >
@@ -53,7 +53,7 @@ const Properties = () => {
           </select>
 
           <select
-            className="flex-1 min-w-[150px] border border-gray-300 rounded-lg px-3 py-2 text-gray-700 focus:outline-none focus:border-red-500"
+            className="flex-1 min-w-[150px] border border-gray-300 rounded-lg px-3 py-2 text-gray-700 focus:outline-none focus:border-yellow-500"
             value={selectedType}
             onChange={(e) => setSelectedType(e.target.value)}
           >
@@ -61,7 +61,7 @@ const Properties = () => {
           </select>
 
           <select
-            className="flex-1 min-w-[150px] border border-gray-300 rounded-lg px-3 py-2 text-gray-700 focus:outline-none focus:border-red-500"
+            className="flex-1 min-w-[150px] border border-gray-300 rounded-lg px-3 py-2 text-gray-700 focus:outline-none focus:border-yellow-500"
             value={selectedTransaction}
             onChange={(e) => setSelectedTransaction(e.target.value)}
           >
@@ -70,13 +70,12 @@ const Properties = () => {
 
           <button
             onClick={() => { setSelectedState('All States'); setSelectedType('All Types'); setSelectedTransaction('All'); }}
-            className="bg-gray-200 text-gray-600 px-4 py-2 rounded-lg hover:bg-gray-300 transition text-sm"
+            className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-yellow-400 hover:text-gray-900 transition text-sm font-semibold"
           >
             Reset
           </button>
         </div>
 
-        {/* Results Count */}
         <p className="text-gray-500 mt-4 mb-6 text-sm">{filtered.length} properties found</p>
 
         {/* Property Grid */}
@@ -88,30 +87,30 @@ const Properties = () => {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {filtered.map((prop) => (
-              <div key={prop.id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+              <div key={prop.id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-yellow-400">
                 <div className="relative">
                   <img src={prop.image} alt={prop.title} className="w-full h-48 object-cover" />
-                  <span className={`absolute top-3 left-3 text-white text-xs font-bold px-3 py-1 rounded-full ${prop.transaction === 'Buy' ? 'bg-green-600' : prop.transaction === 'Rent' ? 'bg-blue-600' : 'bg-orange-500'}`}>
+                  <span className={`absolute top-3 left-3 text-xs font-bold px-3 py-1 rounded-full ${prop.transaction === 'Buy' ? 'bg-yellow-400 text-gray-900' : prop.transaction === 'Rent' ? 'bg-gray-900 text-white' : 'bg-gray-700 text-white'}`}>
                     {prop.transaction}
                   </span>
-                  <span className="absolute top-3 right-3 bg-red-700 text-white text-xs font-bold px-3 py-1 rounded-full">
+                  <span className="absolute top-3 right-3 bg-gray-900 text-yellow-400 text-xs font-bold px-3 py-1 rounded-full">
                     {prop.type}
                   </span>
                 </div>
                 <div className="p-5">
                   <h3 className="text-lg font-bold text-gray-800 mb-1">{prop.title}</h3>
                   <p className="text-gray-500 text-sm flex items-center gap-1 mb-3">
-                    <FaMapMarkerAlt className="text-red-600" /> {prop.location}
+                    <FaMapMarkerAlt className="text-yellow-500" /> {prop.location}
                   </p>
                   <div className="flex justify-between items-center text-sm text-gray-600 mb-4">
                     <span className="flex items-center gap-1">
-                      <FaRulerCombined className="text-red-600" /> {prop.area}
+                      <FaRulerCombined className="text-yellow-500" /> {prop.area}
                     </span>
-                    <span className="flex items-center gap-1 font-bold text-red-700">
+                    <span className="flex items-center gap-1 font-bold text-yellow-600">
                       <FaRupeeSign /> {prop.price}
                     </span>
                   </div>
-                  <Link to={`/properties/${prop.id}`} className="block w-full text-center bg-red-700 text-white py-2 rounded-lg font-semibold hover:bg-red-800 transition">
+                  <Link to={`/properties/${prop.id}`} className="block w-full text-center bg-gray-900 text-white py-2 rounded-lg font-semibold hover:bg-yellow-400 hover:text-gray-900 transition">
                     View Details
                   </Link>
                 </div>

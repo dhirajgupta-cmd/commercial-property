@@ -13,37 +13,37 @@ const properties = [
 
 const FeaturedProperties = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-gray-50">
       <div className="w-full px-6 lg:px-20">
-        <h2 data-aos="fade-up" className="text-3xl font-bold text-center text-gray-800 mb-2">Featured Properties</h2>
+        <h2 data-aos="fade-up" className="text-3xl font-bold text-center text-gray-900 mb-2">Featured Properties</h2>
         <p data-aos="fade-up" data-aos-delay="100" className="text-center text-gray-500 mb-10">Handpicked commercial properties across India</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {properties.map((prop) => (
-            <div key={prop.id} data-aos="fade-up" data-aos-delay={prop.id * 100} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+            <div key={prop.id} data-aos="fade-up" data-aos-delay={prop.id * 100} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-yellow-400">
               <div className="relative">
                 <img src={prop.image} alt={prop.title} className="w-full h-52 object-cover" />
-                <span className={`absolute top-3 left-3 text-white text-xs font-bold px-3 py-1 rounded-full ${prop.transaction === 'Buy' ? 'bg-green-600' : prop.transaction === 'Rent' ? 'bg-blue-600' : 'bg-orange-500'}`}>
+                <span className={`absolute top-3 left-3 text-xs font-bold px-3 py-1 rounded-full ${prop.transaction === 'Buy' ? 'bg-yellow-400 text-gray-900' : prop.transaction === 'Rent' ? 'bg-gray-900 text-white' : 'bg-gray-700 text-white'}`}>
                   {prop.transaction}
                 </span>
-                <span className="absolute top-3 right-3 bg-red-700 text-white text-xs font-bold px-3 py-1 rounded-full">
+                <span className="absolute top-3 right-3 bg-gray-900 text-yellow-400 text-xs font-bold px-3 py-1 rounded-full">
                   {prop.type}
                 </span>
               </div>
               <div className="p-5">
                 <h3 className="text-lg font-bold text-gray-800 mb-1">{prop.title}</h3>
                 <p className="text-gray-500 text-sm flex items-center gap-1 mb-3">
-                  <FaMapMarkerAlt className="text-red-600" /> {prop.location}
+                  <FaMapMarkerAlt className="text-yellow-500" /> {prop.location}
                 </p>
                 <div className="flex justify-between items-center text-sm text-gray-600 mb-4">
                   <span className="flex items-center gap-1">
-                    <FaRulerCombined className="text-red-600" /> {prop.area}
+                    <FaRulerCombined className="text-yellow-500" /> {prop.area}
                   </span>
-                  <span className="flex items-center gap-1 font-bold text-red-700">
+                  <span className="flex items-center gap-1 font-bold text-yellow-600">
                     <FaRupeeSign /> {prop.price}
                   </span>
                 </div>
-                <Link to={`/properties/${prop.id}`} className="block w-full text-center bg-red-700 text-white py-2 rounded-lg font-semibold hover:bg-red-800 transition">
+                <Link to={`/properties/${prop.id}`} className="block w-full text-center bg-gray-900 text-white py-2 rounded-lg font-semibold hover:bg-yellow-400 hover:text-gray-900 transition">
                   View Details
                 </Link>
               </div>
@@ -52,7 +52,7 @@ const FeaturedProperties = () => {
         </div>
 
         <div data-aos="fade-up" className="text-center mt-10">
-          <Link to="/properties" className="border-2 border-red-700 text-red-700 px-8 py-3 rounded-lg font-semibold hover:bg-red-700 hover:text-white transition">
+          <Link to="/properties" className="border-2 border-gray-900 text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-900 hover:text-yellow-400 transition">
             View All Properties
           </Link>
         </div>
