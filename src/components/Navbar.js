@@ -12,7 +12,7 @@ const propertyDropdown = [
 ];
 
 const Navbar = () => {
-  const { t, i18n } = useTranslation();
+  const {  i18n } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);

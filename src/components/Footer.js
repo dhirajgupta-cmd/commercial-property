@@ -21,9 +21,9 @@ const Footer = () => {
             Pune's trusted premium real estate advisory. Residential, commercial, and investment property solutions built on transparency and trust.
           </p>
           <div className="flex gap-4 text-xl">
-            <a href="#" className="hover:text-blue-400 transition"><FaFacebook /></a>
-            <a href="#" className="hover:text-pink-400 transition"><FaInstagram /></a>
-            <a href="#" className="hover:text-red-500 transition"><FaYoutube /></a>
+            <a href="/contact" className="hover:text-blue-400 transition"><FaFacebook /></a>
+            <a href="/contact" className="hover:text-pink-400 transition"><FaInstagram /></a>
+            <a href="/contact" className="hover:text-red-500 transition"><FaYoutube /></a>
             <a href="https://wa.me/917066656633" target="_blank" rel="noreferrer" className="hover:text-green-400 transition"><FaWhatsapp /></a>
           </div>
         </div>
